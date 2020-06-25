@@ -1,13 +1,14 @@
 {
   "name": "@almartino/ng2-image-compress",
-  "version": "10.0.4",
+  "version": "10.0.5",
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",
     "rxjs": "^6.5.5"
   },
   "description": "To install this library, run:",
-  "main": "src/public_api.ts",
+  "main": "dist/public_api.js",
+  "types": "dist/public_api.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
