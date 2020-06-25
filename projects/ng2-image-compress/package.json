@@ -1,6 +1,6 @@
 {
   "name": "@almartino/ng2-image-compress",
-  "version": "10.0.0",
+  "version": "10.0.1",
   "peerDependencies": {
     "@angular/common": "^10.0.0",
     "@angular/core": "^10.0.0",
