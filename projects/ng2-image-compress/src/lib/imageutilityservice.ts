@@ -1,4 +1,4 @@
-import { SourceImage, IImage } from './CompressImage';
+import { SourceImage, IImage } from './compressimage';
 import { Observable } from 'rxjs';
 import { Observer } from 'rxjs';
 

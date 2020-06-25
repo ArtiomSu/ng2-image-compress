@@ -8,7 +8,7 @@ import {ImageCompressService} from './ng2-image-compress.service';
 })
 export class ImageCompressModule {
 
-  static forRoot(): ModuleWithProviders {
+  static forRoot(): ModuleWithProviders<ImageCompressModule> {
     return {
       ngModule: ImageCompressModule,
       providers: [ImageCompressService, ImageUtilityService]
