@@ -1,4 +1,5 @@
-
+# Disclaimer
+This is only a fork from the original repository, I'm just upgrading angular libraries to latest versions.
 
 ***NOTE***
 For Angular 4: use  Version  1.0.17 
