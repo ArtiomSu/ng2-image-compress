@@ -1,15 +1,15 @@
-export interface IImage {
+export interface NgImage {
   fileName: string;
-  imageObjectUrl: string;
+  imageObjectUrl: string | ArrayBuffer;
   imageDataUrl: string;
   type: string;
-  compressedImage: IImage;
+  compressedImage: NgImage;
 }
 
-export class SourceImage implements IImage {
+export class NgSourceImage implements NgImage {
   public fileName: string;
   public imageObjectUrl: string;
   public imageDataUrl: string;
   public type: string;
-  public compressedImage: IImage;
+  public compressedImage: NgImage;
 }

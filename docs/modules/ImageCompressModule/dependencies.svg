@@ -54,13 +54,13 @@
 <path fill="none" stroke="#000000" d="M631,-122.1061C631,-141.3391 631,-169 631,-169 631,-169 467.0459,-169 467.0459,-169"/>
 <polygon fill="#000000" stroke="#000000" points="467.0459,-165.5001 457.0459,-169 467.0458,-172.5001 467.0459,-165.5001"/>
 </g>
-<!-- SourceImage -->
+<!-- NgSourceImage -->
 <g id="node2" class="node">
 <title>SourceImage</title>
 <polygon fill="#ffffb3" stroke="#000000" points="563.8529,-122 474.1471,-122 474.1471,-86 563.8529,-86 563.8529,-122"/>
 <text text-anchor="middle" x="519" y="-99.8" font-family="Times,serif" font-size="14.00" fill="#000000">SourceImage</text>
 </g>
-<!-- SourceImage&#45;&gt;ImageCompressModule -->
+<!-- NgSourceImage&#45;&gt;ImageCompressModule -->
 <g id="edge2" class="edge">
 <title>SourceImage&#45;&gt;ImageCompressModule</title>
 <path fill="none" stroke="#000000" d="M534.7596,-122.027C534.7596,-138.3976 534.7596,-160 534.7596,-160 534.7596,-160 467.0372,-160 467.0372,-160"/>
