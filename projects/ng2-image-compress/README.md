@@ -1,5 +1,6 @@
 # ng2-image-compress
 
+# WIP I'm refactoring this library to convert promises to observables...
 
 ###### ng2-image-compress service is used to compress jpeg or png files on client side browser. It uses using HTML5 Canvas & File API. The compression algorithm is based on   libraries angular-image-compress, ng-image-compress and J-I-C project on github.
 ## Installation

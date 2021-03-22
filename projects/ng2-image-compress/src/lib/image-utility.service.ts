@@ -6,22 +6,23 @@ import {Injectable} from '@angular/core';
 @Injectable({providedIn: 'root'})
 export class ImageUtilityService {
 
-  public createImage(url): Observable<Event> {
-    const image = new Image();
-    const imagePromise = new Promise<Event>(resolve => image.onload = resolve);
-    image.src = url;
-    return from(imagePromise);
-  }
-
-  public filesToSourceImages(fileList: FileList): Observable<NgImage> {
-    return this.filesArrayToSourceImages(Array.from(fileList));
-  }
-
   private fileToURL(file: File): Observable<ProgressEvent<FileReader>> {
     const reader = new FileReader();
     const readerPromise = new Promise<ProgressEvent<FileReader>>(resolve => reader.onload = resolve);
     reader.readAsDataURL(file);
     return from(readerPromise);
+  }
+
+  public createImage(url): Observable<HTMLImageElement> {
+    const image = new Image();
+    const imagePromise = new Promise<Event>(resolve => image.onload = resolve);
+    image.src = url;
+    return from(imagePromise)
+      .pipe(map(() => image));
+  }
+
+  public filesToSourceImages(fileList: FileList): Observable<NgImage> {
+    return this.filesArrayToSourceImages(Array.from(fileList));
   }
 
   public filesArrayToSourceImages(fileList: File[]): Observable<NgImage> {

@@ -1,0 +1,6 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Dashboard</h1>
+  <button mat-raised-button (click)="fileInput.click()" color="primary">UPLOAD</button>
+  <input type="file" style="display:none;" (change)="addFile($event)" multiple
+         #fileInput/>
+</div>

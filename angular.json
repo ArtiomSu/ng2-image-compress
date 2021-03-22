@@ -6,133 +6,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng2-imagecompress-app": {
-      "root": "",
-      "sourceRoot": "src",
-      "projectType": "application",
-      "prefix": "app",
-      "schematics": {},
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/ng2-imagecompress-app",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "optimization": true,
-              "outputHashing": "all",
-              "sourceMap": false,
-              "extractCss": true,
-              "namedChunks": false,
-              "aot": true,
-              "extractLicenses": true,
-              "vendorChunk": false,
-              "buildOptimizer": true,
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
-                }
-              ]
-            }
-          }
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "options": {
-            "browserTarget": "ng2-imagecompress-app:build"
-          },
-          "configurations": {
-            "production": {
-              "browserTarget": "ng2-imagecompress-app:build:production"
-            }
-          }
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "ng2-imagecompress-app:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "main": "src/test.ts",
-            "polyfills": "src/polyfills.ts",
-            "tsConfig": "src/tsconfig.spec.json",
-            "karmaConfig": "src/karma.conf.js",
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": [],
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ]
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "src/tsconfig.app.json",
-              "src/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
-    "ng2-imagecompress-app-e2e": {
-      "root": "e2e/",
-      "projectType": "application",
-      "prefix": "",
-      "architect": {
-        "e2e": {
-          "builder": "@angular-devkit/build-angular:protractor",
-          "options": {
-            "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng2-imagecompress-app:serve"
-          },
-          "configurations": {
-            "production": {
-              "devServerTarget": "ng2-imagecompress-app:serve:production"
-            }
-          }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": "e2e/tsconfig.e2e.json",
-            "exclude": [
-              "**/node_modules/**"
-            ]
-          }
-        }
-      }
-    },
     "ng2-image-compress": {
       "root": "projects/ng2-image-compress",
       "sourceRoot": "projects/ng2-image-compress/src",
@@ -140,10 +13,15 @@
       "prefix": "lib",
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-ng-packagr:build",
+          "builder": "@angular-devkit/build-angular:ng-packagr",
           "options": {
             "tsConfig": "projects/ng2-image-compress/tsconfig.lib.json",
             "project": "projects/ng2-image-compress/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ng2-image-compress/tsconfig.lib.prod.json"
+            }
           }
         },
         "test": {
@@ -167,7 +45,127 @@
           }
         }
       }
+    },
+    "ng2-image-compress-showcase": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "sass"
+        }
+      },
+      "root": "projects/ng2-image-compress-showcase",
+      "sourceRoot": "projects/ng2-image-compress-showcase/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/ng2-image-compress-showcase",
+            "index": "projects/ng2-image-compress-showcase/src/index.html",
+            "main": "projects/ng2-image-compress-showcase/src/main.ts",
+            "polyfills": "projects/ng2-image-compress-showcase/src/polyfills.ts",
+            "tsConfig": "projects/ng2-image-compress-showcase/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/ng2-image-compress-showcase/src/favicon.ico",
+              "projects/ng2-image-compress-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/ng2-image-compress-showcase/src/styles.sass"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/ng2-image-compress-showcase/src/environments/environment.ts",
+                  "with": "projects/ng2-image-compress-showcase/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "ng2-image-compress-showcase:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "ng2-image-compress-showcase:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "ng2-image-compress-showcase:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ng2-image-compress-showcase/src/test.ts",
+            "polyfills": "projects/ng2-image-compress-showcase/src/polyfills.ts",
+            "tsConfig": "projects/ng2-image-compress-showcase/tsconfig.spec.json",
+            "karmaConfig": "projects/ng2-image-compress-showcase/karma.conf.js",
+            "assets": [
+              "projects/ng2-image-compress-showcase/src/favicon.ico",
+              "projects/ng2-image-compress-showcase/src/assets"
+            ],
+            "styles": [
+              "projects/ng2-image-compress-showcase/src/styles.sass"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/ng2-image-compress-showcase/tsconfig.app.json",
+              "projects/ng2-image-compress-showcase/tsconfig.spec.json",
+              "projects/ng2-image-compress-showcase/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/ng2-image-compress-showcase/e2e/protractor.conf.js",
+            "devServerTarget": "ng2-image-compress-showcase:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "ng2-image-compress-showcase:serve:production"
+            }
+          }
+        }
+      }
     }
   },
-  "defaultProject": "ng2-imagecompress-app"
+  "defaultProject": "ng2-image-compress"
 }

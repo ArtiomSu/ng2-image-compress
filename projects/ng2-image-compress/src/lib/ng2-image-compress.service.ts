@@ -3,17 +3,16 @@ import {NgImage} from './image-model';
 import {ImageUtilityService} from './image-utility.service';
 import {from, Observable} from 'rxjs';
 import {ResizeOptions} from './resize-options';
-import {map, mergeMap} from 'rxjs/operators';
+import {map, mergeMap, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageCompressService {
 
-  constructor(private imageUtilityService: ImageUtilityService) {
-  }
+  constructor(private imageUtilityService: ImageUtilityService) {}
 
-  private static compressImageObject(sourceImgObj, options: ResizeOptions): string {
+  private compressImageObject(sourceImgObj, options: ResizeOptions): string {
     const outputFormat = options.Resize_Type;
     const quality = options.Resize_Quality || 50;
     let mimeType = 'image/jpeg';
@@ -56,9 +55,9 @@ export class ImageCompressService {
    * @param options object that describes the resize options
    * */
   public compressImage(sourceImage: NgImage, options: ResizeOptions): Observable<NgImage> {
-    return this.imageUtilityService.createImage(sourceImage.imageDataUrl)
+    return this.imageUtilityService.createImage(sourceImage.imageObjectUrl)
       .pipe(
-        map(ev => ImageCompressService.compressImageObject(ev, options)),
+        map(ev => this.compressImageObject(ev, options)),
         map(compressed => {
           sourceImage.compressedImage = {
             fileName: sourceImage.fileName,
