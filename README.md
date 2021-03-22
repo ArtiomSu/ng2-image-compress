@@ -1,10 +1,7 @@
 # Disclaimer
-This is only a fork from the original repository, I'm just upgrading angular libraries to latest versions.
+~~This is only a fork from the original repository, I'm just upgrading angular libraries to latest versions.~~
 
-***NOTE***
-For Angular 4: use  Version  1.0.17 
-For all other version use 1.0.19 or 7.0.X version
-
+I did some refactoring with es6 syntax and the lib now returns Observables.
 
 # ng2-image-compress
 
