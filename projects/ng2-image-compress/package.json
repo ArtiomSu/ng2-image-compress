@@ -9,7 +9,7 @@
   "dependencies": {
     "tslib": "^2.0.0"
   },
-  "description": "To install this library, run:",
+  "description": "To install this library, run: npm i @almartino/ng2-image-compress",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/almartino/ng2-image-compress.git"
