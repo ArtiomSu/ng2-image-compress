@@ -2,8 +2,8 @@
   "name": "@almartino/ng2-image-compress",
   "version": "11.2.0-WIP2",
   "peerDependencies": {
-    "@angular/common": "^11.2.0",
-    "@angular/core": "^11.2.0",
+    "@angular/common": "^12.0.2",
+    "@angular/core": "^12.0.2",
     "rxjs": "^6.5.5"
   },
   "dependencies": {
