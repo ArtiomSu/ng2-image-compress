@@ -39,7 +39,7 @@ export class ImageCompressService {
     const cvs = document.createElement('canvas');
     cvs.width = width;
     cvs.height = height;
-    const ctx = cvs.getContext('2d').drawImage(sourceImgObj, 0, 0, width, height);
+    cvs.getContext('2d').drawImage(sourceImgObj, 0, 0, width, height);
     const newImageData = cvs.toDataURL(mimeType, quality / 100);
     const resultImageObj = new Image();
     resultImageObj.src = newImageData;
