@@ -7,7 +7,13 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "purgemaps": "rm dist/ng2-image-compress/bundles/artiomsu-ng2-image-compress.umd.js.map && rm dist/ng2-image-compress/fesm2015/artiomsu-ng2-image-compress.js.map",
+    "build-lib": "ng build ng2-image-compress --prod && npm run purgemaps",
+    "npm-pack": "cd dist/ng2-image-compress && npm pack",
+    "package": "npm run build-lib && npm run npm-pack",
+    "publish": "npm publish $(command ls dist/ng2-image-compress/*.tgz)",
+    "packagepublish": "npm run package && npm run publish"
   },
   "private": true,
   "dependencies": {
